@@ -109,18 +109,46 @@ class FocusTimeViewController: UIViewController {
     }
 
     @objc func saveButtonTapped() {
+
         let startTime = startTimePicker.date
         let endTime = endTimePicker.date
         let selectedDaysArray = Array(selectedDays)
-        
+
         delegate?.didSaveFocusTime(startTime: startTime, endTime: endTime, selectedDays: selectedDaysArray)
-        
+
         // Initialize and configure a new SessionsViewController
         let sessionsViewController = SessionsViewController()
+        sessionsViewController.schedules.removeAll()
         sessionsViewController.schedules.append((time: formatTimeRange(startTime: startTime, endTime: endTime), days: formatDays(selectedDaysArray)))
-        
+
         navigationController?.pushViewController(sessionsViewController, animated: true)
     }
+//    @objc func saveButtonTapped() {
+//        // Reset the selected days and time pickers
+//        selectedDays.removeAll()
+//        startTimePicker.setDate(Date(), animated: true)
+//        endTimePicker.setDate(Date(), animated: true)
+//
+//        // Clear UI button selections
+//        for case let button as UIButton in daysStackView.arrangedSubviews {
+//            button.backgroundColor = .darkGray
+//        }
+//
+//        // Save the new data
+//        let startTime = startTimePicker.date
+//        let endTime = endTimePicker.date
+//        let selectedDaysArray = Array(selectedDays)
+//
+//        delegate?.didSaveFocusTime(startTime: startTime, endTime: endTime, selectedDays: selectedDaysArray)
+//
+//        // Initialize and configure a new SessionsViewController
+//        let sessionsViewController = SessionsViewController()
+//        sessionsViewController.schedules.removeAll()
+//        sessionsViewController.schedules.append((time: formatTimeRange(startTime: startTime, endTime: endTime), days: formatDays(selectedDaysArray)))
+//
+//        navigationController?.pushViewController(sessionsViewController, animated: true)
+//    }
+
 
     func formatTimeRange(startTime: Date, endTime: Date) -> String {
         let dateFormatter = DateFormatter()

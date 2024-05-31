@@ -101,6 +101,8 @@ class RulesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @objc func saveButtonTapped() {
         // Save data but do not pop the view controller
         print("Selected categories saved: \(DataStore.shared.selectedCategories)")
+        let ViewContro = SessionsViewController()
+        navigationController?.pushViewController(ViewContro, animated: true)
     }
 }
 

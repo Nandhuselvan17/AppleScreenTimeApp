@@ -137,7 +137,7 @@ class ViewController: UIViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
-            allowButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 40),
+            allowButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 240),
             allowButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             allowButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             allowButton.heightAnchor.constraint(equalToConstant: 50),
